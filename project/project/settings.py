@@ -38,9 +38,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     # подключаем ещё приложения
-    'django.contrib.sites',
-    'django.contrib.flatpages',
-    'simpleapp'
+    # 'django.contrib.sites',
+    # 'django.contrib.flatpages',
+    'simpleapp',
+    'django-filters',
 ]
 
 SITE_ID = 1
