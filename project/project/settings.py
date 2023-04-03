@@ -159,9 +159,11 @@ ACCOUNT_FORMS = {'signup': 'sign.models.BasicSignupForm'}
 
 EMAIL_HOST = 'smtp.yandex.ru'  # адрес сервера Яндекс-почты для всех один и тот же
 EMAIL_PORT = 465  # порт smtp сервера тоже одинаковый
-EMAIL_HOST_USER = 'evgen23strelnikov'  # ваше имя пользователя, например, если ваша почта user@yandex.ru, то сюда надо писать user, иными словами, это всё то что идёт до собаки
+EMAIL_HOST_USER = 'evgen23strelnikov'  # ваше имя пользователя, например, если ваша почта user@yandex.ru, то сюда
+# надо писать user, иными словами, это всё то что идёт до собаки
 EMAIL_HOST_PASSWORD = 'evgenstrelnikov23'  # пароль от почты
-EMAIL_USE_SSL = True  # Яндекс использует ssl, подробнее о том, что это, почитайте в дополнительных источниках, но включать его здесь обязательно
+EMAIL_USE_SSL = True  # Яндекс использует ssl, подробнее о том, что это, почитайте в дополнительных источниках,
+# но включать его здесь обязательно
 
 ADMINS = [
     ('Evgen2308', 'evgen230881@gmail.com'),
@@ -169,3 +171,16 @@ ADMINS = [
 ]
 # это будет у нас вместо аргумента FROM в массовой рассылке
 SERVER_EMAIL = 'evgen23strelnikov@yandex.com'
+
+# CELERY_BROKER_URL = 'redis://default:FTl3bCOi0CAwZgnIQqPwXXkByJYWtbDo@redis-19960.c11.us-east-1-2.ec2.cloud.redislabs.com:19960'
+# CELERY_RESULT_BACKEND = 'redis://default:FTl3bCOi0CAwZgnIQqPwXXkByJYWtbDo@redis-19960.c11.us-east-1-2.ec2.cloud.redislabs.com:19960'
+# CELERY_ACCEPT_CONTENT = ['application/json']
+# CELERY_TASK_SERIALIZER = 'json'
+# CELERY_RESULT_SERIALIZER = 'json'
+
+
+CELERY_BROKER_URL = 'redis://localhost:6379'
+CELERY_RESULT_BACKEND = 'redis://localhost:6379'
+CELERY_ACCEPT_CONTENT = ['application/json']
+CELERY_TASK_SERIALIZER = 'json'
+CELERY_RESULT_SERIALIZER = 'json'

@@ -6,10 +6,9 @@ from datetime import datetime
 from django.template.loader import render_to_string  # импортируем функцию, которая срендерит наш html в текст
 from .models import Appointment
 
-
 class AppointmentView(View):
     def get(self, request, *args, **kwargs):
-        return render(request, 'make_appointment.html', {})
+        return render(request, 'appointments/make_appointment.html', {})
 
     def post(self, request, *args, **kwargs):
         appointment = Appointment(
@@ -21,7 +20,7 @@ class AppointmentView(View):
 
         # получаем наш html
         html_content = render_to_string(
-            'appointment_created.html',
+            'appointments/appointment_create.html',
             {
                 'appointment': appointment,
             }
